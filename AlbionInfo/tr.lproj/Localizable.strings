@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  AlbionInfo
+
+  Created by Berkay Tuncel on 16.07.2024.
+  
+*/
+
+"inventory_title" = "%@ Envanteri";
+"reports_found" = "%lld rapor bulundu";
+"add_new_player" = "Takip edilecek yeni oyuncu ekle";
+"aodp_title" = "Albion Online Veri Projesi";
+"buy" = "Satın Al";
+"city" = "Şehir";
+"enchantment" = "Büyüleme:";
+"equipments" = "Ekipmanlar";
+"excellent_quality" = "Mükemmel Kalite";
+"gold" = "Altın";
+"gold_price" = "Altın Fiyatı";
+"good_quality" = "İyi Kalite";
+"info" = "Bilgi";
+"inventory_empty" = "Envanter boş";
+"item_price" = "Eşya Fiyatı";
+"items" = "Eşyalar";
+"masterpiece_quality" = "Başyapıt Kalitesi";
+"no_kill_death_report" = "Görüntülenecek Öldürme/Ölüm raporu yok";
+"normal_quality" = "Normal Kalite";
+"outstanding_quality" = "Olağanüstü Kalite";
+"player" = "Oyuncu";
+"player_settings" = "Oyuncu Ayarları";
+"players_info" = "Oyuncu Bilgileri";
+"preferred_language" = "Tercih Edilen Dil";
+"prices_info_settings" = "Fiyatlar Albion Online Veri Projesi tarafından sağlanmaktadır. Bu gereklidir çünkü Albion Online'ın yaratıcıları Sandbox Interactive henüz resmi bir API sağlamadı.";
+"report_detail" = "Rapor Detayı";
+"reports_type" = "Rapor türü:";
+"search_placeholder_player" = "Oyuncu ismine göre ara...";
+"search_placeholder_item" = "Eşya ismine göre ara...";
+"search_player" = "Oyuncu Ara";
+"select_language" = "Dili Seç";
+"sell" = "Sat";
+"server" = "Sunucu:";
+"settings" = "Ayarlar";
+"sort_by" = "Sırala:";
+"sort_order" = "Sıralama düzeni:";
+"disclaimer" = "Bu uygulama Sandbox Interactive Gmbh Albion Online ile bağlantılı değildir.";
+"tier_label" = "Seviye:";
+"tracked_players" = "Takip edilen oyuncular";
+"no_player_matching_found" = "%@ ile eşleşen oyuncu bulunamadı.";
+"west" = "Batı";
+"east" = "Doğu";
+"europe" = "Avrupa";
+"both" = "Her İkisi";
+"kills" = "Öldürmeler";
+"deaths" = "Ölümler";
+"time" = "Zaman";
+"fame" = "Şöhret";
+"ascending" = "Artan";
+"descending" = "Azalan";
+"all" = "Hepsi";
+"current_gold_price" = "Güncel altın fiyatı: %lld";

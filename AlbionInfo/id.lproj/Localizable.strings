@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  AlbionInfo
+
+  Created by Berkay Tuncel on 16.07.2024.
+  
+*/
+
+"inventory_title" = "Inventaris %@";
+"reports_found" = "%lld laporan ditemukan";
+"add_new_player" = "Tambahkan pemain baru untuk melacak";
+"aodp_title" = "Proyek Data Albion Online";
+"buy" = "Beli";
+"city" = "Kota";
+"enchantment" = "Pesona:";
+"equipments" = "Peralatan";
+"excellent_quality" = "Kualitas luar biasa";
+"gold" = "Emas";
+"gold_price" = "Harga emas";
+"good_quality" = "Kualitas baik";
+"info" = "Informasi";
+"inventory_empty" = "Inventaris kosong";
+"item_price" = "Harga barang";
+"items" = "Barang";
+"masterpiece_quality" = "Kualitas mahakarya";
+"no_kill_death_report" = "Tidak ada laporan bunuh/mati untuk ditampilkan";
+"normal_quality" = "Kualitas normal";
+"outstanding_quality" = "Kualitas luar biasa";
+"player" = "Pemain";
+"player_settings" = "Pengaturan pemain";
+"players_info" = "Informasi pemain";
+"preferred_language" = "Bahasa pilihan";
+"prices_info_settings" = "Harga disediakan oleh Proyek Data Albion Online. Ini diperlukan karena Sandbox Interactive, pencipta Albion Online, belum menyediakan API resmi.";
+"report_detail" = "Detail laporan";
+"reports_type" = "Jenis laporan:";
+"search_placeholder_player" = "Cari berdasarkan nama pemain...";
+"search_placeholder_item" = "Cari berdasarkan nama item...";
+"search_player" = "Cari pemain";
+"select_language" = "Pilih Bahasa";
+"sell" = "Jual";
+"server" = "Server:";
+"settings" = "Pengaturan";
+"sort_by" = "Urutkan berdasarkan:";
+"sort_order" = "Urutan:";
+"disclaimer" = "Aplikasi ini tidak berafiliasi dengan Sandbox Interactive Gmbh Albion Online.";
+"tier_label" = "Tingkat:";
+"tracked_players" = "Pemain yang dilacak";
+"no_player_matching_found" = "Tidak ada pemain yang cocok dengan %@ ditemukan.";
+"west" = "Barat";
+"east" = "Timur";
+"europe" = "Eropa";
+"both" = "Kedua";
+"kills" = "Pembunuhan";
+"deaths" = "Kematian";
+"time" = "Waktu";
+"fame" = "Kemasyhuran";
+"ascending" = "Menaik";
+"descending" = "Menurun";
+"all" = "Semua";
+"current_gold_price" = "Harga emas saat ini: %lld";

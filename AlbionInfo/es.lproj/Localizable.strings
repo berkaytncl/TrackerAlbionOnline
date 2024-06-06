@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  AlbionInfo
+
+  Created by Berkay Tuncel on 16.07.2024.
+  
+*/
+
+"inventory_title" = "Inventario de %@";
+"reports_found" = "%lld informes encontrados";
+"add_new_player" = "Agregar nuevo jugador para seguir";
+"aodp_title" = "Proyecto de Datos Albion Online";
+"buy" = "Comprar";
+"city" = "Ciudad";
+"enchantment" = "Encantamiento:";
+"equipments" = "Equipos";
+"excellent_quality" = "Calidad excelente";
+"gold" = "Oro";
+"gold_price" = "Precio del oro";
+"good_quality" = "Buena calidad";
+"info" = "Información";
+"inventory_empty" = "Inventario vacío";
+"item_price" = "Precio del artículo";
+"items" = "Artículos";
+"masterpiece_quality" = "Calidad de obra maestra";
+"no_kill_death_report" = "No hay informes de muerte/asesinato para mostrar";
+"normal_quality" = "Calidad normal";
+"outstanding_quality" = "Calidad excepcional";
+"player" = "Jugador";
+"player_settings" = "Configuración del jugador";
+"players_info" = "Información de los jugadores";
+"preferred_language" = "Idioma preferido";
+"prices_info_settings" = "Los precios son proporcionados por el Proyecto de Datos Albion Online. Es necesario porque Sandbox Interactive, los creadores de Albion Online, aún no han proporcionado una API oficial.";
+"report_detail" = "Detalles del informe";
+"reports_type" = "Tipos de informes:";
+"search_placeholder_player" = "Buscar por nombre de jugador...";
+"search_placeholder_item" = "Buscar por nombre de artículo...";
+"search_player" = "Buscar jugador";
+"select_language" = "Seleccionar idioma";
+"sell" = "Vender";
+"server" = "Servidor:";
+"settings" = "Ajustes";
+"sort_by" = "Ordenar por:";
+"sort_order" = "Orden de clasificación:";
+"disclaimer" = "Esta aplicación no está afiliada a Sandbox Interactive Gmbh Albion Online.";
+"tier_label" = "Nivel:";
+"tracked_players" = "Jugadores rastreados";
+"no_player_matching_found" = "No se encontró ningún jugador que coincida con %@.";
+"west" = "Oeste";
+"east" = "Este";
+"europe" = "Europa";
+"both" = "Ambos";
+"kills" = "Muertes";
+"deaths" = "Muertes";
+"time" = "Tiempo";
+"fame" = "Fama";
+"ascending" = "Ascendente";
+"descending" = "Descendente";
+"all" = "Todos";
+"current_gold_price" = "Precio actual del oro: %lld";

@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  AlbionInfo
+
+  Created by Berkay Tuncel on 16.07.2024.
+  
+*/
+
+"inventory_title" = "%@ 库存";
+"reports_found" = "找到 %lld 个报告";
+"add_new_player" = "添加新的追踪玩家";
+"aodp_title" = "Albion Online 数据项目";
+"buy" = "购买";
+"city" = "城市";
+"enchantment" = "附魔:";
+"equipments" = "装备";
+"excellent_quality" = "优良品质";
+"gold" = "黄金";
+"gold_price" = "黄金价格";
+"good_quality" = "良好品质";
+"info" = "信息";
+"inventory_empty" = "库存为空";
+"item_price" = "物品价格";
+"items" = "物品";
+"masterpiece_quality" = "杰作品质";
+"no_kill_death_report" = "没有可显示的杀戮/死亡报告";
+"normal_quality" = "普通品质";
+"outstanding_quality" = "出色品质";
+"player" = "玩家";
+"player_settings" = "玩家设置";
+"players_info" = "玩家信息";
+"preferred_language" = "首选语言";
+"prices_info_settings" = "价格由 Albion Online 数据项目提供。这是必要的，因为 Sandbox Interactive，Albion Online 的创建者，尚未提供正式的 API。";
+"report_detail" = "报告详细信息";
+"reports_type" = "报告类型:";
+"search_placeholder_player" = "按玩家名称搜索...";
+"search_placeholder_item" = "按物品名称搜索...";
+"search_player" = "搜索玩家";
+"select_language" = "选择语言";
+"sell" = "出售";
+"server" = "服务器:";
+"settings" = "设置";
+"sort_by" = "排序依据:";
+"sort_order" = "排序顺序:";
+"disclaimer" = "此应用程序与 Sandbox Interactive Gmbh 的 Albion Online 无关。";
+"tier_label" = "级别:";
+"tracked_players" = "追踪的玩家";
+"no_player_matching_found" = "未找到匹配 %@ 的玩家。";
+"west" = "西";
+"east" = "东";
+"europe" = "欧洲";
+"both" = "两者皆有";
+"kills" = "击杀数";
+"deaths" = "死亡数";
+"time" = "时间";
+"fame" = "声望";
+"ascending" = "升序";
+"descending" = "降序";
+"all" = "全部";
+"current_gold_price" = "当前黄金价格：%lld";

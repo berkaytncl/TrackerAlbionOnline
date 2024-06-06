@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  AlbionInfo
+
+  Created by Berkay Tuncel on 16.07.2024.
+  
+*/
+
+"inventory_title" = "%@ Inventory";
+"reports_found" = "%lld reports found";
+"add_new_player" = "Add a new player to track";
+"aodp_title" = "Albion Online Data Project";
+"buy" = "Buy";
+"city" = "City";
+"enchantment" = "Enchantment:";
+"equipments" = "Equipments";
+"excellent_quality" = "Excellent Quality";
+"gold" = "Gold";
+"gold_price" = "Gold Price";
+"good_quality" = "Good Quality";
+"info" = "Info";
+"inventory_empty" = "Inventory is empty";
+"item_price" = "Item Price";
+"items" = "Items";
+"masterpiece_quality" = "Masterpiece Quality";
+"no_kill_death_report" = "No Kill/Death report to display";
+"normal_quality" = "Normal Quality";
+"outstanding_quality" = "Outstanding Quality";
+"player" = "Player";
+"player_settings" = "Player Settings";
+"players_info" = "Players Info";
+"preferred_language" = "Preferred Language";
+"prices_info_settings" = "Prices are provided by the Albion Online Data Project. This is necessary since Sandbox Interactive, the creators of Albion Online, haven't provided an official API yet.";
+"report_detail" = "Report Detail";
+"reports_type" = "Reports type:";
+"search_placeholder_player" = "Search by player name...";
+"search_placeholder_item" = "Search by item name...";
+"search_player" = "Search Player";
+"select_language" = "Select Language";
+"sell" = "Sell";
+"server" = "Server:";
+"settings" = "Settings";
+"sort_by" = "Sort by:";
+"sort_order" = "Sort order:";
+"disclaimer" = "This application is not affiliated with Sandbox Interactive Gmbh Albion Online.";
+"tier_label" = "Tier:";
+"tracked_players" = "Tracked players";
+"no_player_matching_found" = "No player matching %@ found.";
+"west" = "West";
+"east" = "East";
+"europe" = "Europe";
+"both" = "Both";
+"kills" = "Kills";
+"deaths" = "Deaths";
+"time" = "Time";
+"fame" = "Fame";
+"ascending" = "Ascending";
+"descending" = "Descending";
+"all" = "All";
+"current_gold_price" = "Current gold price: %lld";

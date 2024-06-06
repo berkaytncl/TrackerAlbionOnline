@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  AlbionInfo
+
+  Created by Berkay Tuncel on 16.07.2024.
+  
+*/
+
+"inventory_title" = "%@のインベントリ";
+"reports_found" = "%lld件のレポートが見つかりました";
+"add_new_player" = "新しいプレイヤーを追跡に追加";
+"aodp_title" = "Albion Online データプロジェクト";
+"buy" = "購入";
+"city" = "都市";
+"enchantment" = "エンチャント:";
+"equipments" = "装備";
+"excellent_quality" = "優れた品質";
+"gold" = "ゴールド";
+"gold_price" = "ゴールドの価格";
+"good_quality" = "良い品質";
+"info" = "情報";
+"inventory_empty" = "インベントリは空です";
+"item_price" = "アイテムの価格";
+"items" = "アイテム";
+"masterpiece_quality" = "傑作品質";
+"no_kill_death_report" = "表示するキル/デスレポートがありません";
+"normal_quality" = "通常の品質";
+"outstanding_quality" = "優れた品質";
+"player" = "プレイヤー";
+"player_settings" = "プレイヤー設定";
+"players_info" = "プレイヤー情報";
+"preferred_language" = "希望言語";
+"prices_info_settings" = "価格はAlbion Onlineデータプロジェクトによって提供されています。これは、Albion OnlineのクリエイターであるSandbox Interactiveがまだ公式APIを提供していないため、必要です。";
+"report_detail" = "レポート詳細";
+"reports_type" = "レポートタイプ:";
+"search_placeholder_player" = "プレイヤー名で検索...";
+"search_placeholder_item" = "アイテム名で検索...";
+"search_player" = "プレイヤー検索";
+"select_language" = "言語を選択";
+"sell" = "売る";
+"server" = "サーバー:";
+"settings" = "設定";
+"sort_by" = "並べ替え:";
+"sort_order" = "並べ替え順序:";
+"disclaimer" = "このアプリケーションはSandbox Interactive Gmbh Albion Onlineとは関係ありません。";
+"tier_label" = "階層:";
+"tracked_players" = "追跡プレイヤー";
+"no_player_matching_found" = "%@ に一致するプレイヤーは見つかりませんでした。";
+"west" = "西";
+"east" = "東";
+"europe" = "ヨーロッパ";
+"both" = "両方";
+"kills" = "キル数";
+"deaths" = "デス数";
+"time" = "時間";
+"fame" = "名声";
+"ascending" = "昇順";
+"descending" = "降順";
+"all" = "すべて";
+"current_gold_price" = "現在の金価格：%lld";

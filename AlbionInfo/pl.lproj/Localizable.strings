@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  AlbionInfo
+
+  Created by Berkay Tuncel on 16.07.2024.
+  
+*/
+
+"inventory_title" = "Inwentarz %@";
+"reports_found" = "Znaleziono %lld raportów";
+"add_new_player" = "Dodaj nowego gracza do śledzenia";
+"aodp_title" = "Projekt danych Albion Online";
+"buy" = "Kup";
+"city" = "Miasto";
+"enchantment" = "Zaklęcie:";
+"equipments" = "Wyposażenie";
+"excellent_quality" = "Doskonała jakość";
+"gold" = "Złoto";
+"gold_price" = "Cena złota";
+"good_quality" = "Dobra jakość";
+"info" = "Informacje";
+"inventory_empty" = "Inwentarz jest pusty";
+"item_price" = "Cena przedmiotu";
+"items" = "Przedmioty";
+"masterpiece_quality" = "Arcydzieło jakość";
+"no_kill_death_report" = "Brak raportów zabójstw/śmierci do wyświetlenia";
+"normal_quality" = "Normalna jakość";
+"outstanding_quality" = "Wybitna jakość";
+"player" = "Gracz";
+"player_settings" = "Ustawienia gracza";
+"players_info" = "Informacje o graczach";
+"preferred_language" = "Preferowany język";
+"prices_info_settings" = "Ceny są dostarczane przez Projekt Danych Albion Online. Jest to konieczne, ponieważ twórcy Albion Online, Sandbox Interactive, nie udostępnili jeszcze oficjalnego API.";
+"report_detail" = "Szczegóły raportu";
+"reports_type" = "Rodzaje raportów:";
+"search_placeholder_player" = "Szukaj po nazwie gracza...";
+"search_placeholder_item" = "Szukaj po nazwie przedmiotu...";
+"search_player" = "Szukaj gracza";
+"select_language" = "Wybierz język";
+"sell" = "Sprzedaj";
+"server" = "Serwer:";
+"settings" = "Ustawienia";
+"sort_by" = "Sortuj według:";
+"sort_order" = "Kolejność sortowania:";
+"disclaimer" = "Ta aplikacja nie jest powiązana z firmą Sandbox Interactive Gmbh Albion Online.";
+"tier_label" = "Tier:";
+"tracked_players" = "Śledzeni gracze";
+"no_player_matching_found" = "Nie znaleziono gracza odpowiadającego %@.";
+"west" = "Zachód";
+"east" = "Wschód";
+"europe" = "Europa";
+"both" = "Oba";
+"kills" = "Zabójstwa";
+"deaths" = "Śmierci";
+"time" = "Czas";
+"fame" = "Sława";
+"ascending" = "Rosnąco";
+"descending" = "Malejąco";
+"all" = "Wszystko";
+"current_gold_price" = "Aktualna cena złota: %lld";

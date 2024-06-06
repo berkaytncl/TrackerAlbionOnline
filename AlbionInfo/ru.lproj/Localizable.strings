@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  AlbionInfo
+
+  Created by Berkay Tuncel on 16.07.2024.
+  
+*/
+
+"inventory_title" = "Инвентарь %@";
+"reports_found" = "Найдено %lld отчетов";
+"add_new_player" = "Добавить нового игрока для отслеживания";
+"aodp_title" = "Проект данных Albion Online";
+"buy" = "Купить";
+"city" = "Город";
+"enchantment" = "Очарование:";
+"equipments" = "Оборудование";
+"excellent_quality" = "Отличное качество";
+"gold" = "Золото";
+"gold_price" = "Цена золота";
+"good_quality" = "Хорошее качество";
+"info" = "Информация";
+"inventory_empty" = "Инвентарь пуст";
+"item_price" = "Цена предмета";
+"items" = "Предметы";
+"masterpiece_quality" = "Шедевральное качество";
+"no_kill_death_report" = "Нет отчетов о убийствах/смерти для отображения";
+"normal_quality" = "Обычное качество";
+"outstanding_quality" = "Выдающееся качество";
+"player" = "Игрок";
+"player_settings" = "Настройки игрока";
+"players_info" = "Информация об игроках";
+"preferred_language" = "Предпочитаемый язык";
+"prices_info_settings" = "Цены предоставлены проектом данных Albion Online. Это необходимо, поскольку компания-разработчик Albion Online, Sandbox Interactive, пока не предоставила официального API.";
+"report_detail" = "Детали отчета";
+"reports_type" = "Типы отчетов:";
+"search_placeholder_player" = "Поиск по имени игрока...";
+"search_placeholder_item" = "Поиск по имени предмета...";
+"search_player" = "Поиск игрока";
+"select_language" = "Выберите язык";
+"sell" = "Продать";
+"server" = "Сервер:";
+"settings" = "Настройки";
+"sort_by" = "Сортировать по:";
+"sort_order" = "Порядок сортировки:";
+"disclaimer" = "Это приложение не связано с компанией Sandbox Interactive Gmbh Albion Online.";
+"tier_label" = "Уровень:";
+"tracked_players" = "Отслеживаемые игроки";
+"no_player_matching_found" = "Игрок, соответствующий %@, не найден.";
+"west" = "Запад";
+"east" = "Восток";
+"europe" = "Европа";
+"both" = "Оба";
+"kills" = "Убийства";
+"deaths" = "Смерти";
+"time" = "Время";
+"fame" = "Слава";
+"ascending" = "По возрастанию";
+"descending" = "По убыванию";
+"all" = "Все";
+"current_gold_price" = "Текущая цена золота: %lld";

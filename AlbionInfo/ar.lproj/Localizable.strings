@@ -1,0 +1,47 @@
+/*
+  Localizable.strings
+  AlbionInfo
+
+  Created by Berkay Tuncel on 16.07.2024.
+  
+*/
+
+"inventory_title" = "مخزون %@";
+"reports_found" = "تم العثور على %lld تقارير";
+"add_new_player" = "أضف لاعبًا جديدًا للتتبع";
+"aodp_title" = "مشروع بيانات ألبايون أونلاين";
+"buy" = "شراء";
+"city" = "مدينة";
+"enchantment" = "التعويذة:";
+"equipments" = "معدات";
+"excellent_quality" = "جودة ممتازة";
+"gold" = "ذهب";
+"gold_price" = "سعر الذهب";
+"good_quality" = "جودة جيدة";
+"info" = "معلومات";
+"inventory_empty" = "المخزون فارغ";
+"item_price" = "سعر العنصر";
+"items" = "العناصر";
+"masterpiece_quality" = "جودة رائعة";
+"no_kill_death_report" = "لا توجد تقارير قتل/موت لعرضها";
+"normal_quality" = "جودة عادية";
+"outstanding_quality" = "جودة ممتازة";
+"player" = "لاعب";
+"player_settings" = "إعدادات اللاعب";
+"players_info" = "معلومات اللاعبين";
+"preferred_language" = "اللغة المفضلة";
+"prices_info_settings" = "الأسعار مقدمة من مشروع بيانات ألبايون أونلاين. هذا ضروري لأن Sandbox Interactive، منشئو ألبايون أونلاين، لم يقدموا API رسمي حتى الآن.";
+"report_detail" = "تفاصيل التقرير";
+"reports_type" = "نوع التقارير:";
+"search_placeholder_player" = "البحث بواسطة اسم اللاعب...";
+"search_placeholder_item" = "البحث بواسطة اسم العنصر...";
+"search_player" = "ابحث عن لاعب";
+"select_language" = "اختر اللغة";
+"sell" = "بيع";
+"server" = "الخادم:";
+"settings" = "الإعدادات";
+"sort_by" = "رتب حسب:";
+"sort_order" = "ترتيب:";
+"disclaimer" = "هذا التطبيق غير مرتبط بـ Sandbox Interactive Gmbh ألبايون أونلاين.";
+"tier_label" = "الطبقة:";
+"tracked_players" = "اللاعبون المتتبعون";

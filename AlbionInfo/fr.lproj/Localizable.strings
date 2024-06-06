@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  AlbionInfo
+
+  Created by Berkay Tuncel on 16.07.2024.
+  
+*/
+
+"inventory_title" = "Inventaire de %@";
+"reports_found" = "%lld rapports trouvés";
+"add_new_player" = "Ajouter un nouveau joueur à suivre";
+"aodp_title" = "Projet de données Albion Online";
+"buy" = "Acheter";
+"city" = "Ville";
+"enchantment" = "Enchantement:";
+"equipments" = "Équipements";
+"excellent_quality" = "Qualité excellente";
+"gold" = "Or";
+"gold_price" = "Prix de l'or";
+"good_quality" = "Bonne qualité";
+"info" = "Infos";
+"inventory_empty" = "L'inventaire est vide";
+"item_price" = "Prix de l'article";
+"items" = "Articles";
+"masterpiece_quality" = "Qualité chef-d'œuvre";
+"no_kill_death_report" = "Aucun rapport de meurtre/de mort à afficher";
+"normal_quality" = "Qualité normale";
+"outstanding_quality" = "Qualité exceptionnelle";
+"player" = "Joueur";
+"player_settings" = "Paramètres du joueur";
+"players_info" = "Infos joueurs";
+"preferred_language" = "Langue préférée";
+"prices_info_settings" = "Les prix sont fournis par le projet de données Albion Online. C'est nécessaire car Sandbox Interactive, les créateurs d'Albion Online, n'ont pas encore fourni d'API officielle.";
+"report_detail" = "Détail du rapport";
+"reports_type" = "Type de rapports:";
+"search_placeholder_player" = "Rechercher par nom de joueur...";
+"search_placeholder_item" = "Rechercher par nom d'article...";
+"search_player" = "Rechercher un joueur";
+"select_language" = "Choisir la langue";
+"sell" = "Vendre";
+"server" = "Serveur:";
+"settings" = "Paramètres";
+"sort_by" = "Trier par:";
+"sort_order" = "Ordre de tri:";
+"disclaimer" = "Cette application n'est pas affiliée à Sandbox Interactive Gmbh Albion Online.";
+"tier_label" = "Niveau:";
+"tracked_players" = "Joueurs suivis";
+"no_player_matching_found" = "Aucun joueur correspondant à %@ n'a été trouvé.";
+"west" = "Ouest";
+"east" = "Est";
+"europe" = "Europe";
+"both" = "Les deux";
+"kills" = "Tués";
+"deaths" = "Morts";
+"time" = "Temps";
+"fame" = "Gloire";
+"ascending" = "Ascendant";
+"descending" = "Descendant";
+"all" = "Tout";
+"current_gold_price" = "Prix actuel de l'or: %lld";
