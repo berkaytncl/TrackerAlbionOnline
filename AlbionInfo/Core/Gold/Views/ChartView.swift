@@ -60,7 +60,6 @@ struct ChartView: View {
                     path.addLine(to: CGPoint(x: xPosition, y: yPosition))
                 }
             }
-            .trim(from: 0, to: 1)
             .stroke(.albionBrown, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
             .shadow(color: .albionBrown, radius: 10, x: 0.0, y: 10)
             .shadow(color: .albionBrown.opacity(0.5), radius: 10, x: 0.0, y: 20)

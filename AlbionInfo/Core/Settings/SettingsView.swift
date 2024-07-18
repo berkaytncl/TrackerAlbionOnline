@@ -7,7 +7,7 @@
 
 import SwiftUI
 import SwiftfulRouting
-import SwiftfulUI
+import Combine
 
 struct SettingsView: View {
     @State private var currentLocale: Locale = .current
@@ -54,7 +54,7 @@ struct SettingsView: View {
                         
                         Text(.aodpTitle)
                             .foregroundStyle(.blue)
-                            .asButton {
+                            .onTapGesture {
                                 if let url = URL(string: urlString) {
                                     UIApplication.shared.open(url)
                                 }
@@ -69,7 +69,7 @@ struct SettingsView: View {
             }
             .listStyle(.plain)
         }
-        .onChange(of: selectedLanguage, { _, newValue in
+        .onReceive(Just(selectedLanguage), perform: { newValue in
             changeLanguage(to: newValue)
         })
         .environment(\.locale, currentLocale)
