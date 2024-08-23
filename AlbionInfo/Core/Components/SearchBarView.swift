@@ -23,6 +23,7 @@ struct SearchBarView: View {
                     .foregroundStyle(.albionDarkBrown.opacity(0.5))
             }
             .autocorrectionDisabled()
+            .tint(.albionDarkBrown.opacity(0.5))
             .overlay(
                 Image(systemName: "xmark.circle.fill")
                     .padding()

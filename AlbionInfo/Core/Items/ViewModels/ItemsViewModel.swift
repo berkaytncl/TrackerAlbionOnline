@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import Combine
 import SwiftfulRouting
+import Combine
 
 @MainActor
 final class ItemsViewModel: ObservableObject {
@@ -24,13 +24,21 @@ final class ItemsViewModel: ObservableObject {
     }
     
     private let router: AnyRouter
-    private let itemDataService = ItemsDataService()
-    private let languageManager = LanguageManager.shared
-    private let favoriteItemDataManager = FavoriteItemsDataManager.shared
+    private let itemDataService: ItemsDataService
+    private let languageManager: LanguageManager
+    private let favoriteItemDataManager: FavoriteItemsDataManager
     private var cancellables = Set<AnyCancellable>()
 
-    init(router: AnyRouter) {
+    init(
+        router: AnyRouter,
+        itemDataService: ItemsDataService,
+        languageManager: LanguageManager,
+        favoriteItemDataManager: FavoriteItemsDataManager
+    ) {
         self.router = router
+        self.itemDataService = itemDataService
+        self.languageManager = languageManager
+        self.favoriteItemDataManager = favoriteItemDataManager
         addSubscribers()
     }
     
@@ -104,11 +112,15 @@ final class ItemsViewModel: ObservableObject {
     
     func goToDetailScreen(item: LocalizedItem) {
         router.showScreen(.push) { router in
-            ItemPricesView(router: router, item: item)
+            ItemPricesView(
+                viewModel: ItemPricesViewModel(
+                    router: router,
+                    item: item,
+                    itemPriceDataService: ItemPriceDataService(),
+                    languageManager: LanguageManager.shared,
+                    favoriteItemDataManager: FavoriteItemsDataManager.shared
+                )
+            )
         }
-    }
-    
-    func dismissScreen() {
-        router.dismissScreen()
     }
 }

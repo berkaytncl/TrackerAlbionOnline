@@ -13,6 +13,7 @@ extension UserDefaults {
         static let reportsType = "reports_type_filter"
         static let sortBy = "sort_by_filter"
         static let orderType = "order_type_filter"
+        static let tabSelection = "tab_selection"
     }
     
     var selectedServer: Server {
@@ -52,6 +53,16 @@ extension UserDefaults {
         }
         set {
             UserDefaults.standard.set(newValue.rawValue, forKey: Keys.orderType)
+        }
+    }
+    
+    var tabSelection: TabBarItem {
+        get {
+            let rawValue = UserDefaults.standard.string(forKey: Keys.tabSelection) ?? TabBarItem.player.rawValue
+            return TabBarItem(rawValue: rawValue) ?? .player
+        }
+        set {
+            UserDefaults.standard.set(newValue.rawValue, forKey: Keys.tabSelection)
         }
     }
 }

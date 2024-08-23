@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import Combine
 import SwiftfulRouting
+import Combine
 
 @MainActor
 final class KDSettingsViewModel: ObservableObject {
@@ -20,11 +20,15 @@ final class KDSettingsViewModel: ObservableObject {
     }
     
     private let router: AnyRouter
-    private let favoritePlayerDataManager = FavoritePlayerDataManager.shared
+    private let favoritePlayerDataManager: FavoritePlayerDataManager
     private var cancellables = Set<AnyCancellable>()
     
-    init(router: AnyRouter) {
+    init(
+        router: AnyRouter,
+        favoritePlayerDataManager: FavoritePlayerDataManager
+    ) {
         self.router = router
+        self.favoritePlayerDataManager = favoritePlayerDataManager
         selectedServer = UserDefaults.standard.selectedServer
         addSubscribers()
     }

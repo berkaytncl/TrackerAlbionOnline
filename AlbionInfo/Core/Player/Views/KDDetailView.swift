@@ -6,17 +6,12 @@
 //
 
 import SwiftUI
-import SwiftfulRouting
 import SwiftfulUI
+import SwiftfulRouting
 
 struct KDDetailView: View {
-    private let kdReport: KDReportResponse
-    private let router: AnyRouter
-    
-    init(router: AnyRouter, kdReport: KDReportResponse) {
-        self.router = router
-        self.kdReport = kdReport
-    }
+    let router: AnyRouter
+    let kdReport: KDReportResponse
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -40,8 +35,8 @@ struct KDDetailView: View {
     
     private var header: some View {
         HeaderView(
-            title: LocalizedKey.reportDetail.localized,
-            leftImageName: "arrow.uturn.down",
+            title: .reportDetail,
+            leftImageName: "arrow.down",
             leftBarItemPressed: router.dismissScreen
         )
     }

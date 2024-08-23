@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import Combine
 import SwiftfulRouting
+import Combine
 
 @MainActor
 final class KDSearchPlayerViewModel: ObservableObject {
@@ -18,12 +18,18 @@ final class KDSearchPlayerViewModel: ObservableObject {
     @Published private(set) var serverIsLoading: [Server: Bool] = [:]
     
     private let router: AnyRouter
-    private let playerSearchDataService = PlayerSearchDataService()
-    private let favoritePlayerDataManager = FavoritePlayerDataManager.shared
+    private let playerSearchDataService: PlayerSearchDataService
+    private let favoritePlayerDataManager: FavoritePlayerDataManager
     private var cancellables = Set<AnyCancellable>()
     
-    init(router: AnyRouter) {
+    init(
+        router: AnyRouter,
+        playerSearchDataService: PlayerSearchDataService,
+        favoritePlayerDataManager: FavoritePlayerDataManager
+    ) {
         self.router = router
+        self.playerSearchDataService = playerSearchDataService
+        self.favoritePlayerDataManager = favoritePlayerDataManager
         addSubscribers()
     }
     

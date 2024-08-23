@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftfulUI
 
 struct ItemCell: View {
     let name: String
@@ -36,7 +35,7 @@ struct ItemCell: View {
                     }
                 }
             }
-            .asButton(.tap) {
+            .onTapGesture {
                 onFavoritePressed?()
             }
             

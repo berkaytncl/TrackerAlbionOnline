@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class LanguageManager: ObservableObject {
+final class LanguageManager: ObservableObject {
     static let shared = LanguageManager()
     
     private static let defaultsKey = "selected_language"
@@ -20,8 +20,7 @@ class LanguageManager: ObservableObject {
     }
     
     private init() {
-        self.selectedLanguage =
-        Language(rawValue: UserDefaults.standard.string(forKey: Self.defaultsKey) ?? "") ??
+        selectedLanguage = Language(rawValue: UserDefaults.standard.string(forKey: Self.defaultsKey) ?? "") ??
         Language(rawValue: Locale.preferredLanguages.first?.components(separatedBy: "-").first ?? "") ??
         Language(rawValue: Locale.preferredLanguages.first ?? "") ??
         Language.en

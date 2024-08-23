@@ -6,15 +6,17 @@
 //
 
 import SwiftUI
-import SwiftfulRouting
 
 @main
-struct AlbionInfoApp: App {    
+struct AlbionInfoApp: App {
+    
+    init() {
+        UITabBar.appearance().unselectedItemTintColor = UIColor(.albionBrown.opacity(0.5))
+    }
+    
     var body: some Scene {
         WindowGroup {
-            RouterView { router in
-                RootView(router: router)
-            }
+            RootView()
         }
     }
 }

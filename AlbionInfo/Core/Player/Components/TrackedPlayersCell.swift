@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftfulUI
 
 struct TrackedPlayersCell: View {
     var id: String
@@ -25,7 +24,7 @@ struct TrackedPlayersCell: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 20, height: 20)
-                .asButton {
+                .onTapGesture {
                     onTrashPressed?()
                 }
         }

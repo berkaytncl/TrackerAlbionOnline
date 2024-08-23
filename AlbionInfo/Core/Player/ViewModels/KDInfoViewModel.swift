@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import Combine
 import SwiftfulRouting
+import Combine
 
 @MainActor
 final class KDInfoViewModel: ObservableObject {
@@ -20,12 +20,18 @@ final class KDInfoViewModel: ObservableObject {
     @Published private(set) var orderType: OrderType
     
     private let router: AnyRouter
-    private let kdReportDataService = KDReportDataService()
-    private let favoritePlayerDataManager = FavoritePlayerDataManager.shared
+    private let kdReportDataService: KDReportDataService
+    private let favoritePlayerDataManager: FavoritePlayerDataManager
     private var cancellables = Set<AnyCancellable>()
     
-    init(router: AnyRouter) {
+    init(
+        router: AnyRouter,
+        kdReportDataService: KDReportDataService,
+        favoritePlayerDataManager: FavoritePlayerDataManager
+    ) {
         self.router = router
+        self.kdReportDataService = kdReportDataService
+        self.favoritePlayerDataManager = favoritePlayerDataManager
         reportsType = UserDefaults.standard.reportsType
         sortBy = UserDefaults.standard.sortBy
         orderType = UserDefaults.standard.orderType
@@ -132,23 +138,33 @@ final class KDInfoViewModel: ObservableObject {
     
     func goKDDetailScreen(kdReport: KDReportResponse) {
         router.showScreen(.fullScreenCover) { router in
-            KDDetailView(router: router, kdReport: kdReport)
+            KDDetailView(
+                router: router,
+                kdReport: kdReport
+            )
         }
     }
     
     func goKDTrackPlayerScreen() {
         router.showScreen(.push) { router in
-            KDSearchPlayerView(router: router)
+            KDSearchPlayerView(
+                viewModel: KDSearchPlayerViewModel(
+                    router: router,
+                    playerSearchDataService: PlayerSearchDataService(),
+                    favoritePlayerDataManager: FavoritePlayerDataManager.shared
+                )
+            )
         }
     }
     
     func goKDSettingsScreen() {
         router.showScreen(.push) { router in
-            KDSettingsView(router: router)
+            KDSettingsView(
+                viewModel: KDSettingsViewModel(
+                    router: router,
+                    favoritePlayerDataManager: FavoritePlayerDataManager.shared
+                )
+            )
         }
-    }
-    
-    func dismissScreen() {
-        router.dismissScreen()
     }
 }

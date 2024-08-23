@@ -9,11 +9,7 @@ import SwiftUI
 import SwiftfulRouting
 
 struct ItemPricesView: View {
-    @StateObject private var viewModel: ItemPricesViewModel
-    
-    init(router: AnyRouter, item: LocalizedItem) {
-        _viewModel = StateObject(wrappedValue: ItemPricesViewModel(router: router, item: item))
-    }
+    @StateObject var viewModel: ItemPricesViewModel
     
     var body: some View {
         ZStack {
@@ -36,8 +32,7 @@ struct ItemPricesView: View {
     
     private var header: some View {
         HeaderView(
-            title: LocalizedKey.itemPrice.localized,
-            leftImageName: "arrow.uturn.left",
+            title: .itemPrice,
             leftBarItemPressed: viewModel.dismissScreen
         )
     }
@@ -89,7 +84,17 @@ struct ItemPricesView: View {
 }
 
 #Preview {
-    RouterView { router in
-        ItemPricesView(router: router, item: .mock)
+    let item: LocalizedItem = .mock
+    
+    return RouterView { router in
+        ItemPricesView(
+            viewModel: ItemPricesViewModel(
+                router: router,
+                item: item,
+                itemPriceDataService: ItemPriceDataService(),
+                languageManager: LanguageManager.shared,
+                favoriteItemDataManager: FavoriteItemsDataManager.shared
+            )
+        )
     }
 }

@@ -6,21 +6,19 @@
 //
 
 import SwiftUI
-import SwiftfulRouting
 import Combine
 
 struct SettingsView: View {
-    @State private var currentLocale: Locale = .current
+    @Binding var currentLocale: Locale
     @State private var selectedLanguage: Language
     
     private let urlString: String = "https://www.albion-online-data.com/"
     
-    private let router: AnyRouter
     private let languageManager = LanguageManager.shared
     
-    init(router: AnyRouter) {
-        self.router = router
+    init(locale: Binding<Locale>) {
         selectedLanguage = languageManager.selectedLanguage
+        _currentLocale = locale
     }
     
     var body: some View {
@@ -53,7 +51,9 @@ struct SettingsView: View {
                             .padding(8)
                         
                         Text(.aodpTitle)
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(.albionBrown)
+                            .font(.title3)
+                            .fontWeight(.bold)
                             .onTapGesture {
                                 if let url = URL(string: urlString) {
                                     UIApplication.shared.open(url)
@@ -72,7 +72,6 @@ struct SettingsView: View {
         .onReceive(Just(selectedLanguage), perform: { newValue in
             changeLanguage(to: newValue)
         })
-        .environment(\.locale, currentLocale)
         .toolbar(.hidden, for: .navigationBar)
         .fontWeight(.medium)
         .foregroundStyle(.albionBrown)
@@ -81,9 +80,8 @@ struct SettingsView: View {
     
     private var header: some View {
         HeaderView(
-            title: LocalizedKey.settings.localized,
-            leftImageName: "arrow.uturn.left",
-            leftBarItemPressed: router.dismissScreen
+            title: .settings,
+            isRootView: true
         )
     }
     
@@ -97,7 +95,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    RouterView { router in
-        SettingsView(router: router)
-    }
+    SettingsView(locale: .constant(.current))
 }

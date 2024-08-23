@@ -55,7 +55,7 @@ struct SearchedPlayerInfoCell: View {
                 }
             }
             
-            Image(.guild)
+            Image(systemName: "shield")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 25, height: 25)
@@ -67,8 +67,9 @@ struct SearchedPlayerInfoCell: View {
             HStack {
                 Image(.sword)
                     .resizable()
+                    .renderingMode(.template)
                     .scaledToFit()
-                    .frame(width: 30, height: 30)
+                    .frame(width: 25, height: 25)
                 
                 Text(player.playerData.killFame.abbreviated)
             }
@@ -84,8 +85,9 @@ struct SearchedPlayerInfoCell: View {
                 
                 Image(.skull)
                     .resizable()
+                    .renderingMode(.template)
                     .scaledToFit()
-                    .frame(width: 30, height: 30)
+                    .frame(width: 25, height: 25)
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
         }

@@ -6,16 +6,13 @@
 //
 
 import SwiftUI
-import SwiftfulRouting
 import SwiftfulUI
+import SwiftfulRouting
 
 struct KDInfoView: View {
-    @StateObject private var viewModel: KDInfoViewModel
-    @State private var didAppear: Bool = false
+    @StateObject var viewModel: KDInfoViewModel
     
-    init(router: AnyRouter) {
-        _viewModel = StateObject(wrappedValue: KDInfoViewModel(router: router))
-    }
+    @State private var didAppear: Bool = false
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -31,8 +28,7 @@ struct KDInfoView: View {
                 infoSection
                 scrollViewSection
             }
-            
-            bottomAddNewPlayerSection
+            .padding(.bottom, 4)
         }
         .onAppear {
             if didAppear {
@@ -51,13 +47,30 @@ struct KDInfoView: View {
     }
     
     private var header: some View {
-        HeaderView(
-            title: LocalizedKey.playersInfo.localized,
-            leftImageName: "arrow.uturn.left",
-            rightImageName: "slider.horizontal.3",
-            leftBarItemPressed: viewModel.dismissScreen,
-            rightBarItemPressed: viewModel.goKDSettingsScreen
-        )
+        HStack {
+            HeaderView(
+                title: .playersInfo,
+                isRootView: true
+            )
+            
+            HStack {
+                Image(systemName: "slider.horizontal.3")
+                    .padding(8)
+                    .background(.albionDarkBrown.opacity(0.001))
+                    .onTapGesture {
+                        viewModel.goKDSettingsScreen()
+                    }
+                
+                Image(systemName: "plus")
+                    .padding(8)
+                    .background(.albionDarkBrown.opacity(0.001))
+                    .onTapGesture {
+                        viewModel.goKDTrackPlayerScreen()
+                    }
+            }
+            .padding(8)
+            .font(.title3)
+        }
     }
     
     private var infoSection: some View {
@@ -87,33 +100,16 @@ struct KDInfoView: View {
             .padding(.top)
         }
     }
-    
-    private var bottomAddNewPlayerSection: some View {
-        HStack {
-            if viewModel.kdReports.isEmpty {
-                Text(.addNewPlayer)
-                Image(systemName: "arrow.right")
-            }
-            
-            Circle()
-                .fill(Color.albionBrown)
-                .frame(width: 40, height: 40)
-                .overlay {
-                    Image(systemName: "plus")
-                        .bold()
-                        .asButton(.press) {
-                            viewModel.goKDTrackPlayerScreen()
-                        }
-                        .foregroundStyle(.albionDarkBrown)
-                }
-                .shadow(color: .albionDarkBrown, radius: 10)
-        }
-        .padding([.bottom, .trailing], 40)
-    }
 }
 
 #Preview {
     RouterView { router in
-        KDInfoView(router: router)
+        KDInfoView(
+            viewModel: KDInfoViewModel(
+                router: router,
+                kdReportDataService: KDReportDataService(),
+                favoritePlayerDataManager: FavoritePlayerDataManager.shared
+            )
+        )
     }
 }

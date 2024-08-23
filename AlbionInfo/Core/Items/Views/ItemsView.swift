@@ -7,14 +7,9 @@
 
 import SwiftUI
 import SwiftfulRouting
-import SwiftfulUI
 
 struct ItemsView: View {
-    @StateObject private var viewModel: ItemsViewModel
-    
-    init(router: AnyRouter) {
-        _viewModel = StateObject(wrappedValue: ItemsViewModel(router: router))
-    }
+    @StateObject var viewModel: ItemsViewModel
     
     var body: some View {
         ZStack {
@@ -22,13 +17,20 @@ struct ItemsView: View {
             
             VStack {
                 header
-                SearchBarView(prompt: LocalizedKey.searchPlaceholderItem.localized, searchText: $viewModel.searchText)
-                    .padding(.bottom, 8)
+                
+                SearchBarView(
+                    prompt: LocalizedKey.searchPlaceholderItem.localized,
+                    searchText: $viewModel.searchText
+                )
+                .padding(.bottom, 8)
+                
                 filterSection
+                
                 gridSection
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .padding([.horizontal, .bottom])
+//                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .padding([.horizontal])
             }
+            .padding(.bottom, 4)
         }
         .task {
             await viewModel.getItemsData()
@@ -41,9 +43,8 @@ struct ItemsView: View {
     private var header: some View {
         ZStack(alignment: .trailing) {
             HeaderView(
-                title: LocalizedKey.items.localized,
-                leftImageName: "arrow.uturn.left",
-                leftBarItemPressed: viewModel.dismissScreen
+                title: .items,
+                isRootView: true
             )
             
             Group {
@@ -53,25 +54,28 @@ struct ItemsView: View {
                     Image(systemName: "star")
                 }
             }
-            .foregroundStyle(.albionBrown)
-            .asButton(.tap) {
+            .padding(8)
+            .background(.albionDarkBrown.opacity(0.001))
+            .onTapGesture {
                 viewModel.isItemsFilteredFavorite.toggle()
             }
-            .font(.title2)
-            .padding(.horizontal)
-            .padding(.vertical, 6)
+            .padding(8)
+            .font(.title3)
+            .foregroundStyle(.albionBrown)
         }
     }
     
     private var filterSection: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(.tierLabel)
-            FilterView(selection: $viewModel.tier)
-                .padding(.bottom, 12)
+        VStack(spacing: 0) {
+            HStack {
+                Text(.tierLabel)
+                FilterView(selection: $viewModel.tier)
+            }
             
-            Text(.enchantment)
-            FilterView(selection: $viewModel.enchantment)
-                .padding(.bottom, 12)
+            HStack {
+                Text(.enchantment)
+                FilterView(selection: $viewModel.enchantment)
+            }
         }
         .padding(.horizontal)
     }
@@ -104,6 +108,13 @@ struct ItemsView: View {
 
 #Preview {
     RouterView { router in
-        ItemsView(router: router)
+        ItemsView(
+            viewModel: ItemsViewModel(
+                router: router,
+                itemDataService: ItemsDataService(),
+                languageManager: LanguageManager.shared,
+                favoriteItemDataManager: FavoriteItemsDataManager.shared
+            )
+        )
     }
 }

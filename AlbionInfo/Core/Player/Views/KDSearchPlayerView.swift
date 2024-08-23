@@ -7,14 +7,9 @@
 
 import SwiftUI
 import SwiftfulRouting
-import SwiftfulUI
 
 struct KDSearchPlayerView: View {
-    @StateObject private var viewModel: KDSearchPlayerViewModel
-    
-    init(router: AnyRouter) {
-        _viewModel = StateObject(wrappedValue: KDSearchPlayerViewModel(router: router))
-    }
+    @StateObject var viewModel: KDSearchPlayerViewModel
     
     var body: some View {
         ZStack {
@@ -40,8 +35,7 @@ struct KDSearchPlayerView: View {
     
     private var header: some View {
         HeaderView(
-            title: LocalizedKey.searchPlayer.localized,
-            leftImageName: "arrow.uturn.left",
+            title: .searchPlayer,
             leftBarItemPressed: viewModel.dismissScreen
         )
     }
@@ -73,7 +67,7 @@ struct KDSearchPlayerView: View {
                             .contains(player.playerData.id)
                         ) { view in
                             view
-                                .asButton(.tap) {
+                                .onTapGesture {
                                     viewModel.addFavoritePlayer(
                                         id: player.playerData.id,
                                         name: player.playerData.name,
@@ -95,6 +89,12 @@ struct KDSearchPlayerView: View {
 
 #Preview {
     RouterView { router in
-        KDSearchPlayerView(router: router)
+        KDSearchPlayerView(
+            viewModel: KDSearchPlayerViewModel(
+                router: router,
+                playerSearchDataService: PlayerSearchDataService(),
+                favoritePlayerDataManager: FavoritePlayerDataManager.shared
+            )
+        )
     }
 }

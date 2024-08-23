@@ -68,7 +68,7 @@ struct KDReportCell: View {
     private var guildInfoSection: some View {
         HStack {
             HStack {
-                Image(.guild)
+                Image(systemName: "shield")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 25, height: 25)
@@ -92,7 +92,7 @@ struct KDReportCell: View {
                     Text("-")
                 }
                 
-                Image(.guild)
+                Image(systemName: "shield")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 25, height: 25)

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftfulUI
 
 struct KDEquipments: View {
     let kdReport: KDReportResponse

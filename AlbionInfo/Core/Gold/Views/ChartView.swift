@@ -11,7 +11,11 @@ struct ChartView: View {
     @StateObject private var viewModel: ChartViewModel
     
     init() {
-        _viewModel = StateObject(wrappedValue: ChartViewModel())
+        _viewModel = StateObject(
+            wrappedValue: ChartViewModel(
+                goldPriceDataService: GoldPriceDataService()
+            )
+        )
     }
     
     var body: some View {
@@ -38,6 +42,7 @@ struct ChartView: View {
                     .padding(.horizontal, 4)
             }
         }
+        .padding()
         .frame(maxHeight: .infinity, alignment: .top)
         .onAppear {
             viewModel.getGoldData()
@@ -92,7 +97,7 @@ struct ChartView: View {
             Text(((viewModel.maxY + viewModel.minY) / 2).description)
                 .offset(y: -15)
             Spacer()
-//            Text(minY.description)
+            Text(viewModel.minY.description)
         }
     }
     

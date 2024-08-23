@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import SwiftfulRouting
 
 @MainActor
 final class ChartViewModel: ObservableObject {
@@ -24,10 +23,11 @@ final class ChartViewModel: ObservableObject {
         }
     }
     
-    private let goldPriceDataService = GoldPriceDataService()
+    private let goldPriceDataService: GoldPriceDataService
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
+    init(goldPriceDataService: GoldPriceDataService) {
+        self.goldPriceDataService = goldPriceDataService
         selectedServer = UserDefaults.standard.selectedServer
         addSubscribers()
     }

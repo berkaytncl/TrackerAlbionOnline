@@ -7,76 +7,91 @@
 
 import SwiftUI
 import SwiftfulRouting
-import SwiftfulUI
+import Combine
 
 struct RootView: View {
-    let router: AnyRouter
+    @State private var currentLocale: Locale = .current
+    @State private var tabSelection: TabBarItem
+    
+    init() {
+        let tabSelection = UserDefaults.standard.tabSelection
+        self.tabSelection = tabSelection == .settings ? .player : tabSelection
+    }
     
     var body: some View {
         ZStack {
             Color.albionDarkBrown.ignoresSafeArea()
             
-            VStack {
-                titleSection
-                navigationButtons
+            tabBarSection
+                .id(currentLocale.identifier)
+        }
+    }
+    
+    @MainActor
+    private var tabBarSection: some View {
+        TabView(selection: $tabSelection) {
+            RouterView { router in
+                KDInfoView(
+                    viewModel: KDInfoViewModel(
+                        router: router,
+                        kdReportDataService: KDReportDataService(),
+                        favoritePlayerDataManager: FavoritePlayerDataManager.shared
+                    )
+                )
             }
+            .tabItem {
+                Label(
+                    TabBarItem.player.title,
+                    systemImage: TabBarItem.player.iconName
+                )
+            }
+            .tag(TabBarItem.player)
+            
+            RouterView { router in
+                ItemsView(
+                    viewModel: ItemsViewModel(
+                        router: router,
+                        itemDataService: ItemsDataService(),
+                        languageManager: LanguageManager.shared,
+                        favoriteItemDataManager: FavoriteItemsDataManager.shared
+                    )
+                )
+            }
+            .tabItem {
+                Label(
+                    TabBarItem.items.title,
+                    systemImage: TabBarItem.items.iconName
+                )
+            }
+            .tag(TabBarItem.items)
+            
+            GoldView()
+                .tabItem {
+                    Label(
+                        TabBarItem.gold.title,
+                        systemImage: TabBarItem.gold.iconName
+                    )
+                }
+                .tag(TabBarItem.gold)
+            
+            SettingsView(locale: $currentLocale)
+                .tabItem {
+                    Label(
+                        TabBarItem.settings.title,
+                        systemImage: TabBarItem.settings.iconName
+                    )
+                }
+                .tag(TabBarItem.settings)
         }
-        .foregroundStyle(.albionBrown)
-    }
-    
-    private var titleSection: some View {
-        ZStack(alignment: .bottom) {
-            Image(.albiononline)
-                .resizable()
-                .scaledToFit()
-            
-            Text("Albion Info")
-                .font(.largeTitle)
-                .fontWeight(.black)
-                .lineLimit(1)
-                .minimumScaleFactor(0.5)
-        }
-        .padding(.bottom, 30)
-    }
-    
-    private var navigationButtons: some View {
-        Group {
-            Text(.player)
-                .asButton(.press) {
-                    router.showScreen(.push) { router in
-                        KDInfoView(router: router)
-                    }
-                }
-            
-            Text(.items)
-                .asButton(.press) {
-                    router.showScreen(.push) { router in
-                        ItemsView(router: router)
-                    }
-                }
-            
-            Text(.gold)
-                .asButton(.press) {
-                    router.showScreen(.push) { router in
-                        GoldView(router: router)
-                    }
-                }
-            
-            Text(.settings)
-                .asButton(.press) {
-                    router.showScreen(.push) { router in
-                        SettingsView(router: router)
-                    }
-                }
-        }
-        .font(.title)
-        .fontWeight(.heavy)
-        .padding(4)
+        .accentColor(.albionBrown)
+        .onReceive(Just(tabSelection), perform: { newValue in
+            UserDefaults.standard.tabSelection = newValue
+        })
     }
 }
 
 #Preview {
-    RouterView { router in
-        RootView(router: router)
+    RouterView { _ in
+        RootView()
     }
 }

@@ -6,45 +6,34 @@
 //
 
 import SwiftUI
-import SwiftfulUI
 
 struct HeaderView: View {
-    var title: String = "Players Info"
-    var leftImageName: String = "arrow.uturn.left"
-    var rightImageName: String?
+    var title: LocalizedKey
+    var isRootView: Bool = false
+    var leftImageName: String = "arrow.backward"
     var leftBarItemPressed: VoidAction = nil
-    var rightBarItemPressed: VoidAction = nil
     
     var body: some View {
         HStack {
             Image(systemName: leftImageName)
                 .padding(8)
                 .background(.albionDarkBrown.opacity(0.001))
-                .asButton(.press) {
+                .opacity(isRootView ? 0 : 1)
+                .onTapGesture {
                     leftBarItemPressed?()
                 }
             
             Text(title)
-                .font(.title2)
+                .font(.title)
                 .lineLimit(1)
-                .minimumScaleFactor(0.8)
+                .minimumScaleFactor(0.5)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            
-            if let rightImageName {
-                Image(systemName: rightImageName)
-                    .padding(8)
-                    .background(.albionDarkBrown.opacity(0.001))
-                    .asButton(.press) {
-                        rightBarItemPressed?()
-                    }
-            }
         }
+        .padding(8)
         .font(.title3)
-        .padding(.horizontal)
-        .padding(.vertical, 6)
     }
 }
 
 #Preview {
-    HeaderView()
+    HeaderView(title: .player)
 }

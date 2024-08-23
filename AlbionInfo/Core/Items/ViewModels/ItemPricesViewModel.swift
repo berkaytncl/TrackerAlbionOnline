@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import Combine
 import SwiftfulRouting
+import Combine
 
 @MainActor
 final class ItemPricesViewModel: ObservableObject {
@@ -25,14 +25,23 @@ final class ItemPricesViewModel: ObservableObject {
     }
     
     private let router: AnyRouter
-    private let itemPriceDataService = ItemPriceDataService()
-    private let languageManager = LanguageManager.shared
-    private let favoriteItemDataManager = FavoriteItemsDataManager.shared
+    private let itemPriceDataService: ItemPriceDataService
+    private let languageManager: LanguageManager
+    private let favoriteItemDataManager: FavoriteItemsDataManager
     private var cancellables = Set<AnyCancellable>()
     
-    init(router: AnyRouter, item: LocalizedItem) {
+    init(
+        router: AnyRouter,
+        item: LocalizedItem,
+        itemPriceDataService: ItemPriceDataService,
+        languageManager: LanguageManager,
+        favoriteItemDataManager: FavoriteItemsDataManager
+    ) {
         self.router = router
         self.item = item
+        self.itemPriceDataService = itemPriceDataService
+        self.languageManager = languageManager
+        self.favoriteItemDataManager = favoriteItemDataManager
         selectedServer = UserDefaults.standard.selectedServer
         addSubscribers()
     }

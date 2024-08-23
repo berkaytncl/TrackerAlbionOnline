@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+@MainActor
 final class FavoritePlayerDataManager {
     static let shared = FavoritePlayerDataManager()
     

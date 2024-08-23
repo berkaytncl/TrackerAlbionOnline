@@ -35,7 +35,6 @@ struct ImageLoaderView<Placeholder: View>: View {
                 } placeholder: {
                     placeholder
                 }
-                .retryOnAppear(true)
                 .indicator(.activity)
                 .aspectRatio(contentMode: .fit)
                 .allowsTightening(false)
@@ -46,7 +45,16 @@ struct ImageLoaderView<Placeholder: View>: View {
 
 #Preview {
     ImageLoaderView(uniqueItemName: LocalizedItem.mock.uniqueName) {
-        PlaceholderView()
+        Rectangle()
+            .foregroundColor(.gray)
+            .frame(width: 50, height: 50)
+            .overlay {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .albionBrown))
+                    .foregroundStyle(.albionWhite)
+                    .scaleEffect(1.5)
+                    .padding(.bottom, 8)
+            }
     }
     .clipShape(RoundedRectangle(cornerRadius: 30))
     .padding(40)
