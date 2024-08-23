@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import SimpleNetworking
 
 @MainActor
 final class ItemPriceDataService {
@@ -22,10 +21,10 @@ final class ItemPriceDataService {
     private func getItemPriceData(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         
-        itemPriceSubscription = NetworkingManager.download(url: url)
+        itemPriceSubscription = NetworkManager.download(url: url)
             .decode(type: [ItemPriceResponse].self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: NetworkingManager.handleCompletion) { [weak self] itemPrices in
+            .sink(receiveCompletion: NetworkManager.handleCompletion) { [weak self] itemPrices in
                 self?.itemPrices = itemPrices
             }
     }

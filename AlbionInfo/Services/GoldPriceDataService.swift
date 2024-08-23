@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import SimpleNetworking
 
 @MainActor
 final class GoldPriceDataService {
@@ -21,7 +20,7 @@ final class GoldPriceDataService {
         Server.allCases.forEach { server in
             subscriptions[server]?.cancel()
             subscriptions[server] = getGoldPriceData(
-                urlString: server.goldPricesURL(date: "1-1-2018", endDate: endDate()),
+                urlString: server.goldPricesURL(date: startDate(), endDate: endDate()),
                 server: server
             )
         }
@@ -30,10 +29,10 @@ final class GoldPriceDataService {
     private func getGoldPriceData(urlString: String, server: Server) -> AnyCancellable? {
         guard let url = URL(string: urlString) else { return nil }
         
-        return NetworkingManager.download(url: url)
+        return NetworkManager.download(url: url)
             .decode(type: GoldPrices.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: NetworkingManager.handleCompletion) { [weak self] goldPrices in
+            .sink(receiveCompletion: NetworkManager.handleCompletion) { [weak self] goldPrices in
                 self?.updateGoldData(goldPrices: goldPrices, server: server)
             }
     }
@@ -46,6 +45,20 @@ final class GoldPriceDataService {
             eastGoldPrices = goldPrices
         case .europe:
             europeGoldPrices = goldPrices
+        }
+    }
+    
+    private func startDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M-d-yyyy"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        let calendar = Calendar.current
+        let currentDate = Date()
+        if let oneWeekAgo = calendar.date(byAdding: .weekOfYear, value: -1, to: currentDate) {
+            return dateFormatter.string(from: oneWeekAgo)
+        } else {
+            return ""
         }
     }
     

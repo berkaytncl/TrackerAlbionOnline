@@ -7,8 +7,8 @@
 
 import Foundation
 import Combine
-import SimpleNetworking
 
+@MainActor
 final class PlayerSearchDataService {
     @Published private(set) var westSearchedPlayers: [PlayerServerData] = []
     @Published private(set) var eastSearchedPlayers: [PlayerServerData] = []
@@ -25,10 +25,18 @@ final class PlayerSearchDataService {
     private func getPlayersData(urlString: String, server: Server) -> AnyCancellable? {
         guard let url = URL(string: urlString) else { return nil }
         
-        return NetworkingManager.download(url: url)
+        return NetworkManager.download(url: url)
             .decode(type: PlayerResponse.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: NetworkingManager.handleCompletion) { [weak self] playersData in
+            .sink { [weak self] responseResult in
+                switch responseResult {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self?.updatePlayersData(playersData: [], server: server)
+                }
+            } receiveValue: { [weak self] playersData in
                 self?.updatePlayersData(playersData: playersData.players, server: server)
             }
     }

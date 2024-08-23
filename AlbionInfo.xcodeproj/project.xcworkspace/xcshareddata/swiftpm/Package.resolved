@@ -1,5 +1,5 @@
 {
-  "originHash" : "7f401bdd2b31ea53a3ca431cf56bd1fdc0807f6c93c5d722e03f3fe9ba64498e",
+  "originHash" : "994d4446d662ca8704bfbbc3296754c5c442e12a90eb8ea34f191ecd814fb5f4",
   "pins" : [
     {
       "identity" : "sdwebimage",
@@ -17,15 +17,6 @@
       "state" : {
         "revision" : "b7af5e6bd9c2987e41730400d1baad13d74a141a",
         "version" : "3.0.4"
-      }
-    },
-    {
-      "identity" : "simplenetworking",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/berkaytncl/SimpleNetworking.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "e2243480439cc829dfcc8435778de4c930590fa1"
       }
     },
     {

@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import SimpleNetworking
 
 @MainActor
 final class KDReportDataService {
@@ -33,10 +32,10 @@ final class KDReportDataService {
     private func getReportData(urlString: String, completion: @escaping (([KDReportResponse]) -> Void)) {
         guard let url = URL(string: urlString) else { return }
         
-        NetworkingManager.download(url: url)
+        NetworkManager.download(url: url)
             .decode(type: [KDReportResponse].self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: NetworkingManager.handleCompletion) { kdReport in
+            .sink(receiveCompletion: NetworkManager.handleCompletion) { kdReport in
                 completion(kdReport)
             }
             .store(in: &kdReportSubscription)
