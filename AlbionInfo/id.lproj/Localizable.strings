@@ -8,7 +8,6 @@
 
 "inventory_title" = "Inventaris %@";
 "reports_found" = "%lld laporan ditemukan";
-"add_new_player" = "Tambahkan pemain baru untuk melacak";
 "aodp_title" = "Proyek Data Albion Online";
 "buy" = "Beli";
 "city" = "Kota";
@@ -30,7 +29,7 @@
 "player_settings" = "Pengaturan pemain";
 "players_info" = "Informasi pemain";
 "preferred_language" = "Bahasa pilihan";
-"prices_info_settings" = "Harga disediakan oleh Proyek Data Albion Online. Ini diperlukan karena Sandbox Interactive, pencipta Albion Online, belum menyediakan API resmi.";
+"prices_info_settings" = "Harga disediakan oleh Proyek Data Albion Online.";
 "report_detail" = "Detail laporan";
 "reports_type" = "Jenis laporan:";
 "search_placeholder_player" = "Cari berdasarkan nama pemain...";

@@ -8,7 +8,6 @@
 
 "inventory_title" = "%@ 库存";
 "reports_found" = "找到 %lld 个报告";
-"add_new_player" = "添加新的追踪玩家";
 "aodp_title" = "Albion Online 数据项目";
 "buy" = "购买";
 "city" = "城市";
@@ -30,7 +29,7 @@
 "player_settings" = "玩家设置";
 "players_info" = "玩家信息";
 "preferred_language" = "首选语言";
-"prices_info_settings" = "价格由 Albion Online 数据项目提供。这是必要的，因为 Sandbox Interactive，Albion Online 的创建者，尚未提供正式的 API。";
+"prices_info_settings" = "价格由 Albion Online 数据项目提供。";
 "report_detail" = "报告详细信息";
 "reports_type" = "报告类型:";
 "search_placeholder_player" = "按玩家名称搜索...";

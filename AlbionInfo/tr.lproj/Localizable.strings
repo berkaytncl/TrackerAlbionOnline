@@ -8,7 +8,6 @@
 
 "inventory_title" = "%@ Envanteri";
 "reports_found" = "%lld rapor bulundu";
-"add_new_player" = "Takip edilecek yeni oyuncu ekle";
 "aodp_title" = "Albion Online Veri Projesi";
 "buy" = "Satın Al";
 "city" = "Şehir";
@@ -30,7 +29,7 @@
 "player_settings" = "Oyuncu Ayarları";
 "players_info" = "Oyuncu Bilgileri";
 "preferred_language" = "Tercih Edilen Dil";
-"prices_info_settings" = "Fiyatlar Albion Online Veri Projesi tarafından sağlanmaktadır. Bu gereklidir çünkü Albion Online'ın yaratıcıları Sandbox Interactive henüz resmi bir API sağlamadı.";
+"prices_info_settings" = "Fiyatlar Albion Online Veri Projesi tarafından sağlanmaktadır.";
 "report_detail" = "Rapor Detayı";
 "reports_type" = "Rapor türü:";
 "search_placeholder_player" = "Oyuncu ismine göre ara...";

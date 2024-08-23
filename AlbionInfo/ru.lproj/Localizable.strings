@@ -8,7 +8,6 @@
 
 "inventory_title" = "Инвентарь %@";
 "reports_found" = "Найдено %lld отчетов";
-"add_new_player" = "Добавить нового игрока для отслеживания";
 "aodp_title" = "Проект данных Albion Online";
 "buy" = "Купить";
 "city" = "Город";
@@ -30,7 +29,7 @@
 "player_settings" = "Настройки игрока";
 "players_info" = "Информация об игроках";
 "preferred_language" = "Предпочитаемый язык";
-"prices_info_settings" = "Цены предоставлены проектом данных Albion Online. Это необходимо, поскольку компания-разработчик Albion Online, Sandbox Interactive, пока не предоставила официального API.";
+"prices_info_settings" = "Цены предоставлены проектом данных Albion Online.";
 "report_detail" = "Детали отчета";
 "reports_type" = "Типы отчетов:";
 "search_placeholder_player" = "Поиск по имени игрока...";

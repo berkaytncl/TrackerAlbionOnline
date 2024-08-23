@@ -8,7 +8,6 @@
 
 "inventory_title" = "%@のインベントリ";
 "reports_found" = "%lld件のレポートが見つかりました";
-"add_new_player" = "新しいプレイヤーを追跡に追加";
 "aodp_title" = "Albion Online データプロジェクト";
 "buy" = "購入";
 "city" = "都市";
@@ -30,7 +29,7 @@
 "player_settings" = "プレイヤー設定";
 "players_info" = "プレイヤー情報";
 "preferred_language" = "希望言語";
-"prices_info_settings" = "価格はAlbion Onlineデータプロジェクトによって提供されています。これは、Albion OnlineのクリエイターであるSandbox Interactiveがまだ公式APIを提供していないため、必要です。";
+"prices_info_settings" = "価格はAlbion Onlineデータプロジェクトによって提供されています。";
 "report_detail" = "レポート詳細";
 "reports_type" = "レポートタイプ:";
 "search_placeholder_player" = "プレイヤー名で検索...";

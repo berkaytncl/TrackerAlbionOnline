@@ -8,7 +8,6 @@
 
 "inventory_title" = "%@ 인벤토리";
 "reports_found" = "%lld 보고서 발견";
-"add_new_player" = "추적할 새로운 플레이어 추가";
 "aodp_title" = "알비온 온라인 데이터 프로젝트";
 "buy" = "구매";
 "city" = "도시";
@@ -30,7 +29,7 @@
 "player_settings" = "플레이어 설정";
 "players_info" = "플레이어 정보";
 "preferred_language" = "선호하는 언어";
-"prices_info_settings" = "가격은 알비온 온라인 데이터 프로젝트에서 제공합니다. Sandbox Interactive, 알비온 온라인의 제작자들이 아직 공식 API를 제공하지 않았기 때문에 필요합니다.";
+"prices_info_settings" = "가격은 알비온 온라인 데이터 프로젝트에서 제공합니다.";
 "report_detail" = "보고서 세부 정보";
 "reports_type" = "보고서 유형:";
 "search_placeholder_player" = "플레이어 이름으로 검색...";

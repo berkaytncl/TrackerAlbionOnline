@@ -8,7 +8,6 @@
 
 "inventory_title" = "Inventaire de %@";
 "reports_found" = "%lld rapports trouvés";
-"add_new_player" = "Ajouter un nouveau joueur à suivre";
 "aodp_title" = "Projet de données Albion Online";
 "buy" = "Acheter";
 "city" = "Ville";
@@ -30,7 +29,7 @@
 "player_settings" = "Paramètres du joueur";
 "players_info" = "Infos joueurs";
 "preferred_language" = "Langue préférée";
-"prices_info_settings" = "Les prix sont fournis par le projet de données Albion Online. C'est nécessaire car Sandbox Interactive, les créateurs d'Albion Online, n'ont pas encore fourni d'API officielle.";
+"prices_info_settings" = "Les prix sont fournis par le projet de données Albion Online.";
 "report_detail" = "Détail du rapport";
 "reports_type" = "Type de rapports:";
 "search_placeholder_player" = "Rechercher par nom de joueur...";

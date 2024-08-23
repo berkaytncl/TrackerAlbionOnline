@@ -10,7 +10,6 @@ import Foundation
 enum LocalizedKey: String, CaseIterable {
     case inventoryTitle = "inventory_title"
     case reportsFound = "reports_found"
-    case addNewPlayer = "add_new_player"
     case aodpTitle = "aodp_title"
     case buy
     case city
