@@ -51,7 +51,7 @@ struct RootView: View {
                 ItemsView(
                     viewModel: ItemsViewModel(
                         router: router,
-                        itemDataService: ItemsDataService(),
+                        itemDataService: ItemsDataService.shared,
                         languageManager: LanguageManager.shared,
                         favoriteItemDataManager: FavoriteItemsDataManager.shared
                     )

@@ -10,6 +10,7 @@ import SwiftUI
 struct EquipmentCell: View {
     let equipmentData: EquipmentData?
     var image: ImageResource = .bagRounded
+    var imagePressed: Action<String> = nil
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -30,6 +31,10 @@ struct EquipmentCell: View {
                     .padding(6)
                     .padding(.horizontal, 2)
             }
+        }
+        .onTapGesture {
+            guard let itemId = equipmentData?.itemId else { return }
+            imagePressed?(itemId)
         }
     }
 }

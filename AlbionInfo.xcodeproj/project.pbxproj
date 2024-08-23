@@ -18,6 +18,7 @@
 		EB2B156C2C46B7C400EF6253 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB2B156A2C46B7C400EF6253 /* Localizable.strings */; };
 		EB2BC6482C3AEDC700A69EB3 /* ReportResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC6472C3AEDC700A69EB3 /* ReportResponse.swift */; };
 		EB2BC64A2C3AEF1200A69EB3 /* PlayerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC6492C3AEF1200A69EB3 /* PlayerResponse.swift */; };
+		EB31C1622C79153000F5C242 /* KDDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB31C1612C79153000F5C242 /* KDDetailViewModel.swift */; };
 		EB343C252C42975A00F52386 /* KDEquipments.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB343C242C42975A00F52386 /* KDEquipments.swift */; };
 		EB343C272C42B01C00F52386 /* EquipmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB343C262C42B01C00F52386 /* EquipmentCell.swift */; };
 		EB36223E2C47A0CB00144947 /* GoldPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB36223D2C47A0CB00144947 /* GoldPrice.swift */; };
@@ -108,6 +109,7 @@
 		EB2B157A2C46B7D400EF6253 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB2BC6472C3AEDC700A69EB3 /* ReportResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportResponse.swift; sourceTree = "<group>"; };
 		EB2BC6492C3AEF1200A69EB3 /* PlayerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerResponse.swift; sourceTree = "<group>"; };
+		EB31C1612C79153000F5C242 /* KDDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDDetailViewModel.swift; sourceTree = "<group>"; };
 		EB343C242C42975A00F52386 /* KDEquipments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDEquipments.swift; sourceTree = "<group>"; };
 		EB343C262C42B01C00F52386 /* EquipmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCell.swift; sourceTree = "<group>"; };
 		EB36223D2C47A0CB00144947 /* GoldPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldPrice.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				EB6A5C542C3AAF7F00FFFE25 /* KDInfoViewModel.swift */,
+				EB31C1612C79153000F5C242 /* KDDetailViewModel.swift */,
 				EB937C532C3EB83B00AF50D7 /* KDSearchPlayerViewModel.swift */,
 				EBBEB40A2C41B36C00B3B490 /* KDSettingsViewModel.swift */,
 			);
@@ -576,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB31C1622C79153000F5C242 /* KDDetailViewModel.swift in Sources */,
 				EBBEB40B2C41B36C00B3B490 /* KDSettingsViewModel.swift in Sources */,
 				EBD4BABE2C4583DA00C7F7C2 /* ItemPriceCell.swift in Sources */,
 				EBFAC2BE2C179D70004DA906 /* ItemPricesView.swift in Sources */,

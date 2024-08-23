@@ -9,6 +9,7 @@ import SwiftUI
 
 struct KDEquipments: View {
     let kdReport: KDReportResponse
+    var itemPressed: Action<String> = nil
     
     var body: some View {
         HStack {
@@ -24,22 +25,22 @@ struct KDEquipments: View {
     private func equipmentsSection(equipment: Equipment?) -> some View {
         HStack(spacing: 0) {
             VStack(spacing: 0) {
-                EquipmentCell(equipmentData: equipment?.bag, image: .bagRounded)
-                EquipmentCell(equipmentData: equipment?.mainHand, image: .weaponLRounded)
-                EquipmentCell(equipmentData: equipment?.food, image: .foodRounded)
+                EquipmentCell(equipmentData: equipment?.bag, image: .bagRounded, imagePressed: { itemPressed?($0) })
+                EquipmentCell(equipmentData: equipment?.mainHand, image: .weaponLRounded, imagePressed: { itemPressed?($0) })
+                EquipmentCell(equipmentData: equipment?.food, image: .foodRounded, imagePressed: { itemPressed?($0) })
             }
             
             VStack(spacing: 0) {
-                EquipmentCell(equipmentData: equipment?.head, image: .helmetRounded)
-                EquipmentCell(equipmentData: equipment?.armor, image: .armorRounded)
-                EquipmentCell(equipmentData: equipment?.shoes, image: .shoesRounded)
-                EquipmentCell(equipmentData: equipment?.mount, image: .mountRounded)
+                EquipmentCell(equipmentData: equipment?.head, image: .helmetRounded, imagePressed: { itemPressed?($0) })
+                EquipmentCell(equipmentData: equipment?.armor, image: .armorRounded, imagePressed: { itemPressed?($0) })
+                EquipmentCell(equipmentData: equipment?.shoes, image: .shoesRounded, imagePressed: { itemPressed?($0) })
+                EquipmentCell(equipmentData: equipment?.mount, image: .mountRounded, imagePressed: { itemPressed?($0) })
             }
             
             VStack(spacing: 0) {
-                EquipmentCell(equipmentData: equipment?.cape, image: .capeRounded)
-                EquipmentCell(equipmentData: equipment?.offHand, image: .weaponRRounded)
-                EquipmentCell(equipmentData: equipment?.potion, image: .potionRounded)
+                EquipmentCell(equipmentData: equipment?.cape, image: .capeRounded, imagePressed: { itemPressed?($0) })
+                EquipmentCell(equipmentData: equipment?.offHand, image: .weaponRRounded, imagePressed: { itemPressed?($0) })
+                EquipmentCell(equipmentData: equipment?.potion, image: .potionRounded, imagePressed: { itemPressed?($0) })
             }
         }
     }

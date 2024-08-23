@@ -10,8 +10,7 @@ import SwiftfulUI
 import SwiftfulRouting
 
 struct KDDetailView: View {
-    let router: AnyRouter
-    let kdReport: KDReportResponse
+    @StateObject var viewModel: KDDetailViewModel
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -37,12 +36,12 @@ struct KDDetailView: View {
         HeaderView(
             title: .reportDetail,
             leftImageName: "arrow.down",
-            leftBarItemPressed: router.dismissScreen
+            leftBarItemPressed: viewModel.dismissScreen
         )
     }
     
     private var reportSection: some View {
-        KDReportCell(kdReport: kdReport)
+        KDReportCell(kdReport: viewModel.kdReport)
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .shadow(radius: 5)
             .padding(.horizontal)
@@ -53,7 +52,10 @@ struct KDDetailView: View {
         VStack {
             Text(.equipments)
             
-            KDEquipments(kdReport: kdReport)
+            KDEquipments(
+                kdReport: viewModel.kdReport,
+                itemPressed: viewModel.goToItemDetailScreen
+            )
         }
         .frame(maxWidth: .infinity)
         .padding(8)
@@ -67,16 +69,19 @@ struct KDDetailView: View {
     
     private var inventorySection: some View {
         VStack {
-            Text(.inventoryTitle, with: kdReport.victim.name)
+            Text(.inventoryTitle, with: viewModel.kdReport.victim.name)
             
-            let loot = kdReport.victim.loot.compactMap { $0 }
+            let loot = viewModel.kdReport.victim.loot.compactMap { $0 }
             
             if loot.isEmpty {
                 Text(.inventoryEmpty)
                     .padding()
             } else {
                 NonLazyVGrid(columns: 6, spacing: 0, items: loot) { item in
-                    EquipmentCell(equipmentData: item)
+                    EquipmentCell(
+                        equipmentData: item,
+                        imagePressed: viewModel.goToItemDetailScreen
+                    )
                 }
             }
         }
@@ -93,6 +98,13 @@ struct KDDetailView: View {
 
 #Preview {
     RouterView { router in
-        KDDetailView(router: router, kdReport: .mock)
+        KDDetailView(
+            viewModel: KDDetailViewModel(
+                router: router,
+                kdReport: .mock,
+                itemDataService: ItemsDataService.shared,
+                languageManager: LanguageManager.shared
+            )
+        )
     }
 }

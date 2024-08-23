@@ -11,6 +11,14 @@ import Foundation
 final class ItemsDataService {
     @Published private(set) var items: [LocalizedItem] = []
     
+    static let shared = ItemsDataService()
+    
+    private init() {
+        Task {
+            await loadItemData()
+        }
+    }
+    
     func loadItemData() async {
         guard let url = Bundle.main.url(forResource: "items", withExtension: "json") else { return }
         
@@ -31,9 +39,7 @@ final class ItemsDataService {
                 }
             }
             
-            await MainActor.run { [weak self] in
-                self?.items = localizedItems
-            }
+            items = localizedItems
         } catch {
             debugPrint(error.localizedDescription)
         }

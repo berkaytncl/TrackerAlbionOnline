@@ -139,8 +139,12 @@ final class KDInfoViewModel: ObservableObject {
     func goKDDetailScreen(kdReport: KDReportResponse) {
         router.showScreen(.fullScreenCover) { router in
             KDDetailView(
-                router: router,
-                kdReport: kdReport
+                viewModel: KDDetailViewModel(
+                    router: router,
+                    kdReport: kdReport,
+                    itemDataService: ItemsDataService.shared,
+                    languageManager: LanguageManager.shared
+                )
             )
         }
     }
