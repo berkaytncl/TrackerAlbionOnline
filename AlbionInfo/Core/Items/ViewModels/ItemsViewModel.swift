@@ -97,9 +97,9 @@ final class ItemsViewModel: ObservableObject {
             }
             
             if !text.isEmpty {
-                guard item.localizedNames.getLocalizedText(for: languageManager.selectedLanguage)
-                    .lowercased()
-                    .contains(text.lowercased()) else { return nil }
+                let itemDefaultName = item.localizedNames.getLocalizedText(for: .en)
+                let itemLocalizedName = item.localizedNames.getLocalizedText(for: languageManager.selectedLanguage)
+                guard itemDefaultName.lowercased().contains(text.lowercased()) || itemLocalizedName.lowercased().contains(text.lowercased()) else { return nil }
             }
             
             return item

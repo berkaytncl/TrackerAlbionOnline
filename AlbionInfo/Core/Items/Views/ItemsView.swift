@@ -27,7 +27,6 @@ struct ItemsView: View {
                 filterSection
                 
                 gridSection
-//                    .clipShape(RoundedRectangle(cornerRadius: 8))
                     .padding([.horizontal])
             }
             .padding(.bottom, 4)
