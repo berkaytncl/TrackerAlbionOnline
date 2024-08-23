@@ -66,10 +66,6 @@ final class ItemsViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
-    func getItemsData() async {
-        await itemDataService.loadItemData()
-    }
 
     private func mapItemsToFavoritedItems(items: [LocalizedItem], favoritedItems: [String], isItemsFilteredFavorite: Bool) -> [LocalizedItem] {
         guard isItemsFilteredFavorite else { return items }
@@ -97,9 +93,21 @@ final class ItemsViewModel: ObservableObject {
             }
             
             if !text.isEmpty {
-                let itemDefaultName = item.localizedNames.getLocalizedText(for: .en)
-                let itemLocalizedName = item.localizedNames.getLocalizedText(for: languageManager.selectedLanguage)
-                guard itemDefaultName.lowercased().contains(text.lowercased()) || itemLocalizedName.lowercased().contains(text.lowercased()) else { return nil }
+                guard item.localizedNames.getLocalizedText(for: languageManager.selectedLanguage)
+                    .lowercased()
+                    .contains(text.lowercased()) else {
+                    let itemDefaultName = item.localizedNames.getLocalizedText(for: .en)
+                    if itemDefaultName.lowercased().contains(text.lowercased()) {
+                        return LocalizedItem(
+                            localizedNames: item.localizedNames,
+                            localizedDescriptions: item.localizedDescriptions,
+                            itemId: item.itemId,
+                            uniqueName: item.uniqueName,
+                            filteredFormDefaultLanguage: true
+                        )
+                    }
+                    return nil
+                }
             }
             
             return item

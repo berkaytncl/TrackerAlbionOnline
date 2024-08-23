@@ -22,6 +22,7 @@ struct LocalizedItemResponse: Codable {
 struct LocalizedItem {
     let localizedNames, localizedDescriptions: Localized
     let itemId, uniqueName: String
+    var filteredFormDefaultLanguage: Bool = false
 }
 
 extension LocalizedItem {
@@ -60,7 +61,8 @@ extension LocalizedItem {
                 trTr: "Ekipman Eşyası"
             ),
             itemId: "6889",
-            uniqueName: "T8_MAIN_FROSTSTAFF_AVALON@4"
+            uniqueName: "T8_MAIN_FROSTSTAFF_AVALON@4",
+            filteredFormDefaultLanguage: false
         )
     }()
 }

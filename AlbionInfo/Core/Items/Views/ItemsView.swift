@@ -31,9 +31,6 @@ struct ItemsView: View {
             }
             .padding(.bottom, 4)
         }
-        .task {
-            await viewModel.getItemsData()
-        }
         .toolbar(.hidden, for: .navigationBar)
         .fontWeight(.medium)
         .foregroundStyle(.albionBrown)
@@ -91,6 +88,7 @@ struct ItemsView: View {
                     ItemCell(
                         name: item.localizedNames.getLocalizedText(for: viewModel.selectedLanguage),
                         uniqueName: item.uniqueName,
+                        isFilteredFormDefaultLanguage: item.filteredFormDefaultLanguage,
                         isFavorited: viewModel.favoritedItems.contains(item.itemId)
                     ) {
                         viewModel.updateFavoritedItems(id: item.itemId)
@@ -110,7 +108,7 @@ struct ItemsView: View {
         ItemsView(
             viewModel: ItemsViewModel(
                 router: router,
-                itemDataService: ItemsDataService(),
+                itemDataService: ItemsDataService.shared,
                 languageManager: LanguageManager.shared,
                 favoriteItemDataManager: FavoriteItemsDataManager.shared
             )

@@ -10,6 +10,7 @@ import SwiftUI
 struct ItemCell: View {
     let name: String
     let uniqueName: String
+    var isFilteredFormDefaultLanguage: Bool = true
     var isFavorited: Bool = false
     var onFavoritePressed: VoidAction = nil
     
@@ -39,11 +40,16 @@ struct ItemCell: View {
                 onFavoritePressed?()
             }
             
-            Text(name)
-                .font(.callout)
-                .foregroundStyle(.albionDarkBrown)
-                .lineLimit(2)
-                .padding(.horizontal, 4)
+            Group {
+                Text(name)
+                    .foregroundColor(.albionDarkBrown)
+                +
+                Text(isFilteredFormDefaultLanguage ? " (en)" : "")
+                    .foregroundColor(.albionDarkBrown.opacity(0.7))
+            }
+            .font(.callout)
+            .lineLimit(2)
+            .padding(.horizontal, 4)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(4)
