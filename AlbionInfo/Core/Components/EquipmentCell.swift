@@ -40,5 +40,8 @@ struct EquipmentCell: View {
 }
 
 #Preview {
-    EquipmentCell(equipmentData: KDReportResponse.mock.victim.equipment.mainHand, image: .bagRounded)
+    EquipmentCell(
+        equipmentData: KDReportResponse.mock.victim.equipment.mainHand,
+        image: .bagRounded
+    )
 }

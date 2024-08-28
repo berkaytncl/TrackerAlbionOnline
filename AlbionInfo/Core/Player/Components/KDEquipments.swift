@@ -25,22 +25,22 @@ struct KDEquipments: View {
     private func equipmentsSection(equipment: Equipment?) -> some View {
         HStack(spacing: 0) {
             VStack(spacing: 0) {
-                EquipmentCell(equipmentData: equipment?.bag, image: .bagRounded, imagePressed: { itemPressed?($0) })
-                EquipmentCell(equipmentData: equipment?.mainHand, image: .weaponLRounded, imagePressed: { itemPressed?($0) })
-                EquipmentCell(equipmentData: equipment?.food, image: .foodRounded, imagePressed: { itemPressed?($0) })
+                EquipmentCell(equipmentData: equipment?.bag, image: .bagRounded, imagePressed: itemPressed)
+                EquipmentCell(equipmentData: equipment?.mainHand, image: .weaponLRounded, imagePressed: itemPressed)
+                EquipmentCell(equipmentData: equipment?.food, image: .foodRounded, imagePressed: itemPressed)
             }
             
             VStack(spacing: 0) {
-                EquipmentCell(equipmentData: equipment?.head, image: .helmetRounded, imagePressed: { itemPressed?($0) })
-                EquipmentCell(equipmentData: equipment?.armor, image: .armorRounded, imagePressed: { itemPressed?($0) })
-                EquipmentCell(equipmentData: equipment?.shoes, image: .shoesRounded, imagePressed: { itemPressed?($0) })
-                EquipmentCell(equipmentData: equipment?.mount, image: .mountRounded, imagePressed: { itemPressed?($0) })
+                EquipmentCell(equipmentData: equipment?.head, image: .helmetRounded, imagePressed: itemPressed)
+                EquipmentCell(equipmentData: equipment?.armor, image: .armorRounded, imagePressed: itemPressed)
+                EquipmentCell(equipmentData: equipment?.shoes, image: .shoesRounded, imagePressed: itemPressed)
+                EquipmentCell(equipmentData: equipment?.mount, image: .mountRounded, imagePressed: itemPressed)
             }
             
             VStack(spacing: 0) {
-                EquipmentCell(equipmentData: equipment?.cape, image: .capeRounded, imagePressed: { itemPressed?($0) })
-                EquipmentCell(equipmentData: equipment?.offHand, image: .weaponRRounded, imagePressed: { itemPressed?($0) })
-                EquipmentCell(equipmentData: equipment?.potion, image: .potionRounded, imagePressed: { itemPressed?($0) })
+                EquipmentCell(equipmentData: equipment?.cape, image: .capeRounded, imagePressed: itemPressed)
+                EquipmentCell(equipmentData: equipment?.offHand, image: .weaponRRounded, imagePressed: itemPressed)
+                EquipmentCell(equipmentData: equipment?.potion, image: .potionRounded, imagePressed: itemPressed)
             }
         }
     }
