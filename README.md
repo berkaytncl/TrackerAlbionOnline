@@ -4,6 +4,14 @@ A native iPhone companion app for Albion Online, built with SwiftUI. Look up pla
 
 I released the app on the App Store in August 2024. It reached **2,000+ downloads** before I removed it from the store.
 
+## Screenshots
+
+<p>
+  <img src="docs/screenshots/pvp-report.png" alt="PvP report showing both loadouts and the defeated player’s inventory" width="220">
+  <img src="docs/screenshots/item-prices.png" alt="Item buy and sell prices by city in the Europe region" width="220">
+  <img src="docs/screenshots/gold-price-history.png" alt="Gold price history chart for the Europe region" width="220">
+</p>
+
 ## Features
 
 - Search for players and view their stats, recent PvP reports, and equipment details.
