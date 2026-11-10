@@ -950,7 +950,7 @@
 			);
 			currentVersion = EB6A5C592C3AB0EC00FFFE25 /* FavoritePlayerContainer.xcdatamodel */;
 			name = FavoritePlayerContainer.xcdatamodeld;
-			path = "/Users/matflow/Documents/iOS Project/SwiftUI/AlbionInfo/AlbionInfo/Models/FavoritePlayerContainer.xcdatamodeld";
+			path = FavoritePlayerContainer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
@@ -961,7 +961,7 @@
 			);
 			currentVersion = EBEFB1AE2C3A705000B0F139 /* FavoriteItemContainer.xcdatamodel */;
 			name = FavoriteItemContainer.xcdatamodeld;
-			path = "/Users/matflow/Documents/iOS Project/SwiftUI/AlbionInfo/AlbionInfo/Models/FavoriteItemContainer.xcdatamodeld";
+			path = FavoriteItemContainer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
